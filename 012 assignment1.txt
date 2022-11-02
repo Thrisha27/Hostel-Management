@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Single Page Application</title>
+    </head>
+
+    <script>
+        var pages = {
+            'Home' : 'Welcome!!',
+            'About' : 'This is a single page application',
+            'More' : 'This is Thrisha',
+            'Contact' : 'This is the last page'
+        };
+
+        function getPageContent(page){
+            var contentToReturn
+
+            switch(page){
+                case 'Home':
+                    contentToReturn=pages.Home;
+                    break;
+                case 'About':
+                    contentToReturn=pages.About;
+                    break;
+                case 'More':
+                    contentToReturn=pages.More;
+                    break;
+                case 'Contact':
+                    contentToReturn=pages.Contact;
+                    break;
+                default:
+                    contentToReturn=pages.Home;
+                    break;
+            }
+
+            document.getElementById('content').innerHTML = contentToReturn;
+        }
+    </script>
+
+    <body onload="getPageContent('Home')">
+        <div style="width:20%; float:left; background:rgb(19, 65, 150); color:black; height:100%;">
+            <ul>
+                <li style="line-height: 50px;"><a href="#" onclick="getPageContent('Home')"  style="color:white;">FIRST</a></li>
+                <li style="line-height: 50px;"><a href="#" onclick="getPageContent('About')" style="color:white;">SECOND</a></li>
+                <li style="line-height: 50px;"><a href="#" onclick="getPageContent('More')" style="color:white;">THIRD</a></li>
+                <li style="line-height: 50px;"><a href="#" onclick="getPageContent('Contact')" style="color:white;">FOURTH</a></li>
+            </ul>
+        </div>
+
+        <div style="width: 80%; float:right; background:rgb(25, 1, 1); color:white; height:100%; font-size:50px;">
+            <p style="margin-left: 50px;" id="content"></p>
+        </div>
+
+    </body>
+</html>
